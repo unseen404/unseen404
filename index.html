@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNSEEN404</title>
+  <meta name="description" content="UNSEEN404 — a portal for what the world refuses to see." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="top">
+      <div class="logo">UNSEEN<span class="glitch">404</span></div>
+    </header>
+
+    <section class="hero">
+      <h1 class="headline">a portal for what the world refuses to see</h1>
+      <p class="tag">soft-launch // v0.1</p>
+      <a class="enter" href="#entry">Enter</a>
+    </section>
+
+    <section id="entry" class="entry">
+      <p class="copy">
+        This is a living placeholder. The full site is incubating.
+        For contact & inquiries: 
+        <a href="mailto:unseentemple404@proton.me">unseentemple404@proton.me</a>.
+      </p>
+    </section>
+
+    <footer class="foot">
+      <small>© <span id="y"></span> UNSEEN404. All rites reversed.</small>
+    </footer>
+  </main>
+
+  <script>
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
