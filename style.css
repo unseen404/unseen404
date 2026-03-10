@@ -1,0 +1,94 @@
+/* UNSEEN404 minimal theme */
+:root{
+  --bg:#0a0a0a;
+  --fg:#f2f2f2;
+  --muted:#9a9a9a;
+  --accent:#c0c0c0;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 800px at 50% 20%, #111 0%, #0a0a0a 55%, #000 100%);
+  color:var(--fg);
+  line-height:1.6;
+}
+.container{min-height:100%;display:flex;flex-direction:column;justify-content:space-between}
+.top{padding:24px 28px}
+.logo{
+  letter-spacing:.08em;
+  font-weight:600;
+  font-size:18px;
+  text-transform:uppercase;
+}
+.glitch{
+  display:inline-block;
+  position:relative;
+}
+/* subtle glitch shimmer */
+.glitch::after, .glitch::before{
+  content:"404";
+  position:absolute; top:0; left:0;
+  mix-blend-mode:screen;
+  opacity:.12; filter:blur(.8px);
+  transform:translate(0,0);
+  animation:shift 3.2s infinite ease-in-out;
+}
+.glitch::before{color:#7ff; animation-duration:2.8s}
+.glitch::after{color:#f7a; animation-duration:3.6s}
+@keyframes shift{
+  0%,100%{transform:translate(0,0)}
+  40%{transform:translate(1px,-0.5px)}
+  70%{transform:translate(-1px,0.5px)}
+}
+
+.hero{
+  padding:16vh 8vw 10vh;
+  text-align:center;
+  animation:fade 800ms ease-out both;
+}
+@keyframes fade{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)}}
+
+.headline{
+  margin:0 auto 12px;
+  max-width:900px;
+  font-size:clamp(28px, 4.5vw, 56px);
+  font-weight:300;
+  letter-spacing:.02em;
+}
+.tag{
+  margin:0 auto 28px;
+  color:var(--muted);
+  font-size:14px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.enter{
+  display:inline-block;
+  padding:12px 22px;
+  border:1px solid var(--accent);
+  border-radius:999px;
+  text-decoration:none;
+  color:var(--fg);
+  backdrop-filter: blur(2px);
+  transition:transform .2s ease, background .2s ease, opacity .2s ease;
+}
+.enter:hover{transform:translateY(-1px); background:rgba(255,255,255,.06)}
+
+.entry{
+  padding:8vh 8vw 12vh;
+  border-top:1px solid #141414;
+}
+.copy{
+  max-width:720px; margin:0 auto; color:var(--accent); font-weight:400
+}
+.copy a{color:#fff; text-decoration:none; border-bottom:1px dashed #666}
+.copy a:hover{border-bottom-color:#aaa}
+
+.foot{padding:22px 28px; color:var(--muted); border-top:1px solid #101010}
+
+@media (prefers-reduced-motion: reduce){
+  .glitch::after,.glitch::before{animation:none}
+  .hero{animation:none}
+}
